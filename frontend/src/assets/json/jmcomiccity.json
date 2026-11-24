@@ -1,0 +1,51 @@
+{
+    "bookSourceComment": "",
+    "bookSourceGroup": "🎨漫画",
+    "bookSourceName": "🎨禁漫天堂(正文有问题)",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https:\/\/jmcomic1.me\/",
+    "customOrder": 37,
+    "enabled": true,
+    "enabledExplore": true,
+    "exploreUrl": "总排行榜::\/albums?o=mv?page={{key}}\n月排行榜::\/albums?t=m&o=mv?page={{key}}\n周排行榜::\/albums?o=mv&t=w?page={{key}}\n日排行榜::\/albums?o=mv&t=t?page={{key}}\n最新A漫::\/albums?o=mr?page={{key}}\n同人::\/albums\/doujin?page={{key}}\n\n单行本::\/albums\/single?o=mr?page={{key}}\n短篇::\/albums\/short?page={{key}}\n其他::\/albums\/another?page={{key}}\n韩漫::\/albums\/hanman?page={{key}}\n美漫::\/albums\/meiman?page={{key}}\ncosplay::\/albums\/another\/sub\/cosplay?page={{key}}",
+    "lastUpdateTime": 1651214216611,
+    "respondTime": 180000,
+    "ruleBookInfo": {
+        "coverUrl": "class.thumb-overlay.2@tag.img@src",
+        "init": "",
+        "intro": "class.nav-tab-content@class.p-t-5 p-b-5@text",
+        "kind": "class.tag-block.3@text",
+        "name": "class.panel-heading.0@text"
+    },
+    "ruleContent": {
+        "items":"class.row thumb-overlay-albums@img@data-original",
+        "content":"class.row thumb-overlay-albums",
+        "imageStyle": "Full",
+        "decodeImage": true
+    },
+    "ruleExplore": {
+        "bookList": "class.col-xs-6 col-sm-6 col-md-4 col-lg-3 list-col",
+        "bookUrl": "tag.a.0@href",
+        "coverUrl": "tag.img@src",
+        "intro": "class.p-t-5 p-b-5.7@text",
+        "kind": "class.title-truncate@tag.a@text",
+        "name": "class.video-title title-truncate m-t-5@text"
+    },
+    "ruleSearch": {
+        "bookList": "class.list-col",
+        "bookUrl": "tag.a.0@href",
+        "realUrl":"class.img@data-original",
+        "coverUrl": "class.img@data-original",
+        "kind": "class.title-truncate tags p-b-5@tag.a@text",
+        "name": "tag.img@title",
+        "id": "\\/album\\/(.*?)\\/"
+    },
+    "ruleToc": {
+        "chapterList": "class.btn-toolbar.0@tag.a||class.col btn btn-primary dropdown-toggle reading",
+        "chapterName": "text",
+        "chapterUrl": "tag.a@href"
+    },
+    "searchUrl": "https:\/jmcomic1.me\/search\/photos?search_query={{key}}&main_tag=0",
+    "contentUrl":"https:\/jmcomic1.me\/photo\/${id}",
+    "weight": 0
+}

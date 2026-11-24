@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/poetize.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="webkit" name="renderer" />
+    <meta name="force-rendering" content="webkit"/>
+    <meta name="referrer" content="no-referrer" />
+    <meta name="qiankun-entry" content="true" />
+    <title>Ablaze Admin - 博客管理系统</title>
+    <script>
+      // 确保在qiankun环境下正确加载资源
+      if (window.__POWERED_BY_QIANKUN__) {
+        // 动态设置publicPath
+        __webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__;
+      }
+      
+      // 判断是否为生产环境
+      const isProd = window.location.href.includes('cos.roginx.ink') || 
+                    window.location.href.includes('roginx.ink') ||
+                    window.location.hostname !== 'localhost' && 
+                    window.location.hostname !== '127.0.0.1';
+                    
+      // 在生产环境下，确保publicPath指向COS
+      if (isProd && window.__POWERED_BY_QIANKUN__) {
+        window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__ = 'https://cos.roginx.ink/www/admin/';
+        __webpack_public_path__ = 'https://cos.roginx.ink/www/admin/';
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

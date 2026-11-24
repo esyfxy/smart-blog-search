@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv='content-language' content='zh-cn'>
+    <meta charset="utf-8" />
+    <meta name="Robots" content="all" />
+    <meta name="keywords" content="Janxland,Janx,Roginshin,roginx,ROGINX,人工智能,前端,后端,动漫,游戏,博客"/>
+    <meta name="description" content="Hi~大家好，我是ROGINX，喜欢学习技术与分享。该站点用来记录个人学习心得和项目总结哦~">
+    <meta name="baidu-site-verification" content="codeva-FAjK1LxybY" />
+    <meta content="webkit" name="renderer" />
+    <meta name="force-rendering" content="webkit"/>
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="/poetize.jpg" sizes="16x16">
+    <title>ROGINSHIN - 兴</title>
+    <style>
+        body{
+        margin: 0;
+        padding: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='https://cos.roginx.ink/www/index/cdn/js/jquery.min.js'>"+ "<"+"/script>");
+    </script>
+    <script type="text/javascript">
+        window.$.cookie || document.write("<script src='https://cos.roginx.ink/www/index/cdn/js/jquery.cookie.min.js'>"+ "<"+"/script>");  
+    </script>
+    <script defer src="https://cos.roginx.ink/www/index/cdn/js/highlight.min.js"></script>
+    <script defer src="https://cos.roginx.ink//www/index/cdn/js/highlightjs-line-numbers.min.js"></script>
+    <script defer src="https://cos.roginx.ink/www/index/cdn/js/mobile-detect.min.js"></script>
+    <script defer src="https://cos.roginx.ink/www/index/cdn/js/anime.min.js"></script>
+    <script defer src="https://cos.roginx.ink//www/index/cdn/js/clipboard.min.js"></script>
+    <script src="https://cos.roginx.ink/www/index/cdn/js/wow.min.js"></script>
+    <link  href="https://cos.roginx.ink/www/index/cdn/js/animate.min.css" rel="stylesheet">
+    <script defer src="/music-js/aes.js"></script>
+    <script defer src="/music-js/BigInt.js"></script>
+    <script defer src="/music-js/Barrett.js"></script>
+    <script defer src="/music-js/RSA.js"></script>
+    <script defer src="/music-js/163Api.js"></script>
+    <script defer src="/music-js/jsoup.js"></script>
+    <script defer src="/music-js/JMshake.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<link  href="https://fastly.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css" rel="stylesheet">
+<link  href="https://fastly.jsdelivr.net/npm/lightgallery@2.7/css/lightgallery-bundle.min.css" rel="stylesheet"></link>
+<!-- <script async src="https://edu.roginx.ink/api/tracking/script.js" data-tracking-id="track_7746e0cab7a84b2d846e1bc59354d5ff" data-debug="true"></script> -->
+<script async src="https://edu.roginx.ink/api/tracking/script.js" data-tracking-id="track_2752c25f5bb54db7a74a5a85abdd7437" data-min-interval="30000" data-enable-spa="false"></script>
+<script src="https://cos.roginx.ink//www/index/cdn/js/lightgallery.min.js" version="2.7" defer></script>
+<script src="https://cos.roginx.ink//www/index/cdn/js/lg-thumbnail.min.js" defer></script>
+<script src="https://cos.roginx.ink/www/index/cdn/js/lg-hash.min.js" defer></script>
+<script src="https://cos.roginx.ink/www/index/cdn/js/lg-rotate.min.js" defer></script>
+<script src="https://cos.roginx.ink/www/index/cdn/js/lg-video.min.js" defer></script>
+<script src="https://cos.roginx.ink//www/index/cdn/js/lg-zoom.min.js" defer></script>
+<script src="https://cos.roginx.ink/www/index/cdn/js/lg-fullscreen.min.js" defer></script>
+<script src="https://cos.roginx.ink/www/index/cdn/js/lg-autoplay.min.js" defer></script>
+<script src="https://cos.roginx.ink//www/index/cdn/js/lg-comment.min.js" defer></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8d81b3a903a663ba74ab6f6bdb38fa8a";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<script>
+    new WOW().init();
+</script>
+
+<script>
+    window.baseAPIhandle = {}
+</script>
+
+<!-- SSO Token -->
+<script defer>
+
+    (async () => {
+        if (localStorage.getItem('userToken')) return;
+        
+        try {
+            const res = await fetch('https://edu.roginx.ink/api/auth-center/sso-config', {
+                credentials: 'include'
+            });
+            const data = await res.json();
+            console.log('SSO响应数据:', data);
+            
+            if (data.code === 200 && data.data?.data?.cookies) {
+                const { sso_access_token, sso_refresh_token } = data.data.data.cookies;
+                console.log('提取的tokens:', { sso_access_token: sso_access_token?.substring(0, 20) + '...', sso_refresh_token });
+                
+                if (sso_access_token && sso_refresh_token) {
+                    localStorage.setItem('userToken', sso_access_token);
+                    localStorage.setItem('auth_token', sso_access_token);
+                    localStorage.setItem('freshToken', sso_refresh_token);
+                    localStorage.setItem('fresh_token', sso_refresh_token);
+                    console.log('Token已存储到localStorage');
+                    
+                    // 触发自定义事件通知应用获取用户信息
+                    window.dispatchEvent(new CustomEvent('ssoTokenUpdated'));
+                }
+            }
+        } catch (e) {
+            console.warn('SSO token fetch failed:', e);
+        }
+    })();
+</script>
+
+<!-- 引入入口JS文件 -->
+<script type="module" src="/src/main.js"></script>
+
+</body>
+</html>
